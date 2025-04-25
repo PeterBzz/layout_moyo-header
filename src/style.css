@@ -1,3 +1,213 @@
+/* stylelint-disable scss/operator-no-newline-after */
+
+html {
+  font-family: Roboto, serif;
+  font-weight: 500;
+  font-size: 12px;
+
+  --width-nav-apple: 56.55px;
+  --width-nav-samsung: 77.53px;
+  --width-nav-smartphones: 107.28px;
+  --width-nav-laptops-and-computers: 157.23px;
+  --width-nav-gadgets: 73.53px;
+  --width-nav-tablets: 70.16px;
+  --width-nav-photo: 59.58px;
+  --width-nav-video: 54.03px;
+  --width-nav-right-margin: 50px;
+  --width-nav-link-margin: 10px;
+  --height-link: 60px;
+  --radius-underline: 4px;
+}
+
 body {
   margin: 0;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  background-color: aliceblue;
+}
+
+.logo {
+  display: block;
+  padding-top: 10px;
+  padding-left: 50px;
+  flex-grow: 1;
+}
+
+.nav-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list li {
+  float: left;
+}
+
+.link {
+  color: black;
+  text-decoration: none;
+  height: var(--height-link);
+  display: block;
+  align-content: center;
+  margin: 0 var(--width-nav-link-margin);
+  text-transform: uppercase;
+}
+
+.link.first {
+  margin: 0 var(--width-nav-link-margin) 0 0;
+}
+
+.link.last {
+  margin: 0 0 0 var(--width-nav-link-margin);
+}
+
+.link:hover,
+.is-active {
+  color: #00acdc;
+}
+
+.right-margin {
+  display: block;
+  width: var(--width-nav-right-margin);
+  margin: 0;
+  padding: 0;
+}
+
+.is-active.apple::after {
+  content: '';
+  border-style: solid;
+  border-radius: var(--radius-underline);
+  border-width: calc(var(--radius-underline) / 2);
+  position: absolute;
+  top: calc(var(--height-link) - var(--radius-underline));
+  right: calc(
+    var(--width-nav-right-margin) + var(--width-nav-video) +
+      var(--width-nav-photo) + var(--width-nav-tablets) +
+      var(--width-nav-gadgets) + var(--width-nav-laptops-and-computers) +
+      var(--width-nav-smartphones) + var(--width-nav-samsung)
+  );
+  width: calc(
+    var(--width-nav-apple) - var(--width-nav-link-margin) * 2 -
+      var(--radius-underline)
+  );
+}
+
+.is-active.samsung::after {
+  content: '';
+  border-style: solid;
+  border-radius: var(--radius-underline);
+  border-width: calc(var(--radius-underline) / 2);
+  position: absolute;
+  top: calc(var(--height-link) - var(--radius-underline));
+  right: calc(
+    var(--width-nav-right-margin) + var(--width-nav-video) +
+      var(--width-nav-photo) + var(--width-nav-tablets) +
+      var(--width-nav-gadgets) + var(--width-nav-laptops-and-computers) +
+      var(--width-nav-smartphones)
+  );
+  width: calc(
+    var(--width-nav-samsung) - var(--width-nav-link-margin) * 2 -
+      var(--radius-underline)
+  );
+}
+
+.is-active.smartphones::after {
+  content: '';
+  border-style: solid;
+  border-radius: var(--radius-underline);
+  border-width: calc(var(--radius-underline) / 2);
+  position: absolute;
+  top: calc(var(--height-link) - var(--radius-underline));
+  right: calc(
+    var(--width-nav-right-margin) + var(--width-nav-video) +
+      var(--width-nav-photo) + var(--width-nav-tablets) +
+      var(--width-nav-gadgets) + var(--width-nav-laptops-and-computers)
+  );
+  width: calc(
+    var(--width-nav-smartphones) - var(--width-nav-link-margin) * 2 -
+      var(--radius-underline)
+  );
+}
+
+.is-active.laptops-and-computers::after {
+  content: '';
+  border-style: solid;
+  border-radius: var(--radius-underline);
+  border-width: calc(var(--radius-underline) / 2);
+  position: absolute;
+  top: calc(var(--height-link) - var(--radius-underline));
+  right: calc(
+    var(--width-nav-right-margin) + var(--width-nav-video) +
+      var(--width-nav-photo) + var(--width-nav-tablets) +
+      var(--width-nav-gadgets)
+  );
+  width: calc(
+    var(--width-nav-laptops-and-computers) - var(--width-nav-link-margin) * 2 -
+      var(--radius-underline)
+  );
+}
+
+.is-active.gadgets::after {
+  content: '';
+  border-style: solid;
+  border-radius: var(--radius-underline);
+  border-width: calc(var(--radius-underline) / 2);
+  position: absolute;
+  top: calc(var(--height-link) - var(--radius-underline));
+  right: calc(
+    var(--width-nav-right-margin) + var(--width-nav-video) +
+      var(--width-nav-photo) + var(--width-nav-tablets)
+  );
+  width: calc(
+    var(--width-nav-gadgets) - var(--width-nav-link-margin) * 2 -
+      var(--radius-underline)
+  );
+}
+
+.is-active.tablets::after {
+  content: '';
+  border-style: solid;
+  border-radius: var(--radius-underline);
+  border-width: calc(var(--radius-underline) / 2);
+  position: absolute;
+  top: calc(var(--height-link) - var(--radius-underline));
+  right: calc(
+    var(--width-nav-right-margin) + var(--width-nav-video) +
+      var(--width-nav-photo)
+  );
+  width: calc(
+    var(--width-nav-tablets) - var(--width-nav-link-margin) * 2 -
+      var(--radius-underline)
+  );
+}
+
+.is-active.photo::after {
+  content: '';
+  border-style: solid;
+  border-radius: var(--radius-underline);
+  border-width: calc(var(--radius-underline) / 2);
+  position: absolute;
+  top: calc(var(--height-link) - var(--radius-underline));
+  right: calc(var(--width-nav-right-margin) + var(--width-nav-video));
+  width: calc(
+    var(--width-nav-photo) - var(--width-nav-link-margin) * 2 -
+      var(--radius-underline)
+  );
+}
+
+.is-active.video::after {
+  content: '';
+  border-style: solid;
+  border-radius: var(--radius-underline);
+  border-width: calc(var(--radius-underline) / 2);
+  position: absolute;
+  top: calc(var(--height-link) - var(--radius-underline));
+  right: calc(var(--width-nav-right-margin));
+  width: calc(
+    var(--width-nav-video) - var(--width-nav-link-margin) * 2 -
+      var(--radius-underline)
+  );
 }

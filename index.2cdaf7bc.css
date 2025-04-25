@@ -1,0 +1,86 @@
+html {
+  --width-nav-apple: 56.55px;
+  --width-nav-samsung: 77.53px;
+  --width-nav-smartphones: 107.28px;
+  --width-nav-laptops-and-computers: 157.23px;
+  --width-nav-gadgets: 73.53px;
+  --width-nav-tablets: 70.16px;
+  --width-nav-photo: 59.58px;
+  --width-nav-video: 54.03px;
+  --width-nav-right-margin: 50px;
+  --width-nav-link-margin: 10px;
+  --height-link: 60px;
+  --radius-underline: 4px;
+  --color-link: #00acdc;
+  font-family: Roboto, serif;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+body {
+  margin: 0;
+}
+
+header {
+  flex-direction: row;
+  display: flex;
+}
+
+.logo {
+  flex-grow: 1;
+  padding-top: 10px;
+  padding-left: 50px;
+  display: block;
+}
+
+.nav-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.nav-list li {
+  float: left;
+}
+
+.link {
+  color: #000;
+  height: var(--height-link);
+  margin: 0 var(--width-nav-link-margin);
+  text-transform: uppercase;
+  align-content: center;
+  text-decoration: none;
+  display: block;
+  position: relative;
+}
+
+.link.first {
+  margin: 0 var(--width-nav-link-margin) 0 0;
+}
+
+.link.last {
+  margin: 0 0 0 var(--width-nav-link-margin);
+}
+
+.link:hover, .is-active {
+  color: var(--color-link);
+}
+
+.right-margin {
+  width: var(--width-nav-right-margin);
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+.is-active:after {
+  content: "";
+  border-radius: var(--radius-underline);
+  border-style: solid;
+  border-width: calc(var(--radius-underline) / 2);
+  top: calc(var(--height-link)  - var(--radius-underline));
+  width: calc(100% - var(--radius-underline));
+  position: absolute;
+  left: 0;
+}
+/*# sourceMappingURL=index.2cdaf7bc.css.map */

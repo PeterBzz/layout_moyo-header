@@ -17,6 +17,7 @@ html {
   --width-nav-link-margin: 10px;
   --height-link: 60px;
   --radius-underline: 4px;
+  --color-link: #00acdc;
 }
 
 body {
@@ -26,7 +27,6 @@ body {
 header {
   display: flex;
   flex-direction: row;
-  background-color: aliceblue;
 }
 
 .logo {
@@ -66,7 +66,7 @@ header {
 
 .link:hover,
 .is-active {
-  color: #00acdc;
+  color: var(--color-link);
 }
 
 .right-margin {

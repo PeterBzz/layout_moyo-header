@@ -54,6 +54,7 @@ header {
   align-content: center;
   margin: 0 var(--width-nav-link-margin);
   text-transform: uppercase;
+  position: relative;
 }
 
 .link.first {
@@ -76,138 +77,13 @@ header {
   padding: 0;
 }
 
-.is-active.apple::after {
+.is-active::after {
   content: '';
   border-style: solid;
   border-radius: var(--radius-underline);
   border-width: calc(var(--radius-underline) / 2);
   position: absolute;
   top: calc(var(--height-link) - var(--radius-underline));
-  right: calc(
-    var(--width-nav-right-margin) + var(--width-nav-video) +
-      var(--width-nav-photo) + var(--width-nav-tablets) +
-      var(--width-nav-gadgets) + var(--width-nav-laptops-and-computers) +
-      var(--width-nav-smartphones) + var(--width-nav-samsung)
-  );
-  width: calc(
-    var(--width-nav-apple) - var(--width-nav-link-margin) * 2 -
-      var(--radius-underline)
-  );
-}
-
-.is-active.samsung::after {
-  content: '';
-  border-style: solid;
-  border-radius: var(--radius-underline);
-  border-width: calc(var(--radius-underline) / 2);
-  position: absolute;
-  top: calc(var(--height-link) - var(--radius-underline));
-  right: calc(
-    var(--width-nav-right-margin) + var(--width-nav-video) +
-      var(--width-nav-photo) + var(--width-nav-tablets) +
-      var(--width-nav-gadgets) + var(--width-nav-laptops-and-computers) +
-      var(--width-nav-smartphones)
-  );
-  width: calc(
-    var(--width-nav-samsung) - var(--width-nav-link-margin) * 2 -
-      var(--radius-underline)
-  );
-}
-
-.is-active.smartphones::after {
-  content: '';
-  border-style: solid;
-  border-radius: var(--radius-underline);
-  border-width: calc(var(--radius-underline) / 2);
-  position: absolute;
-  top: calc(var(--height-link) - var(--radius-underline));
-  right: calc(
-    var(--width-nav-right-margin) + var(--width-nav-video) +
-      var(--width-nav-photo) + var(--width-nav-tablets) +
-      var(--width-nav-gadgets) + var(--width-nav-laptops-and-computers)
-  );
-  width: calc(
-    var(--width-nav-smartphones) - var(--width-nav-link-margin) * 2 -
-      var(--radius-underline)
-  );
-}
-
-.is-active.laptops-and-computers::after {
-  content: '';
-  border-style: solid;
-  border-radius: var(--radius-underline);
-  border-width: calc(var(--radius-underline) / 2);
-  position: absolute;
-  top: calc(var(--height-link) - var(--radius-underline));
-  right: calc(
-    var(--width-nav-right-margin) + var(--width-nav-video) +
-      var(--width-nav-photo) + var(--width-nav-tablets) +
-      var(--width-nav-gadgets)
-  );
-  width: calc(
-    var(--width-nav-laptops-and-computers) - var(--width-nav-link-margin) * 2 -
-      var(--radius-underline)
-  );
-}
-
-.is-active.gadgets::after {
-  content: '';
-  border-style: solid;
-  border-radius: var(--radius-underline);
-  border-width: calc(var(--radius-underline) / 2);
-  position: absolute;
-  top: calc(var(--height-link) - var(--radius-underline));
-  right: calc(
-    var(--width-nav-right-margin) + var(--width-nav-video) +
-      var(--width-nav-photo) + var(--width-nav-tablets)
-  );
-  width: calc(
-    var(--width-nav-gadgets) - var(--width-nav-link-margin) * 2 -
-      var(--radius-underline)
-  );
-}
-
-.is-active.tablets::after {
-  content: '';
-  border-style: solid;
-  border-radius: var(--radius-underline);
-  border-width: calc(var(--radius-underline) / 2);
-  position: absolute;
-  top: calc(var(--height-link) - var(--radius-underline));
-  right: calc(
-    var(--width-nav-right-margin) + var(--width-nav-video) +
-      var(--width-nav-photo)
-  );
-  width: calc(
-    var(--width-nav-tablets) - var(--width-nav-link-margin) * 2 -
-      var(--radius-underline)
-  );
-}
-
-.is-active.photo::after {
-  content: '';
-  border-style: solid;
-  border-radius: var(--radius-underline);
-  border-width: calc(var(--radius-underline) / 2);
-  position: absolute;
-  top: calc(var(--height-link) - var(--radius-underline));
-  right: calc(var(--width-nav-right-margin) + var(--width-nav-video));
-  width: calc(
-    var(--width-nav-photo) - var(--width-nav-link-margin) * 2 -
-      var(--radius-underline)
-  );
-}
-
-.is-active.video::after {
-  content: '';
-  border-style: solid;
-  border-radius: var(--radius-underline);
-  border-width: calc(var(--radius-underline) / 2);
-  position: absolute;
-  top: calc(var(--height-link) - var(--radius-underline));
-  right: calc(var(--width-nav-right-margin));
-  width: calc(
-    var(--width-nav-video) - var(--width-nav-link-margin) * 2 -
-      var(--radius-underline)
-  );
+  left: 0;
+  width: calc(100% - var(--radius-underline));
 }
